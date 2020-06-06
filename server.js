@@ -11,12 +11,12 @@ mongoose.connect(mongoUrl, {
 })
 mongoose.Promise = Promise
 
-// setup mangoose models
 const File = mongoose.model('File',
   { filename: String,
     description: String,
     uploader: String,
-    date: Date })
+    date: Date,
+    type: String })
 
 const port = process.env.PORT || 8080
 const app = express()
@@ -32,15 +32,17 @@ app.post('/upload', (req, res) => {
 
   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
   const { sampleFile } = req.files
+  const { description, uploader } = req.body
 
   // Use the mv() method to place the file somewhere on your server
   sampleFile.mv(`uploads/${sampleFile.name}`, async (err) => {
     if (err) return res.status(500).send(err)
 
-    const file = new File({ filename: sampleFile.name, description: '', uploader: '', date: Date.now() })
+    // eslint-disable-next-line max-len
+    const file = new File({ filename: sampleFile.name, description, uploader, date: Date.now(), type: sampleFile.mimetype })
     await file.save()
 
-    res.send('File uploaded!')
+    res.redirect('http://localhost:3000/')
   })
 })
 

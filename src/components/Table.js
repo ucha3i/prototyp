@@ -1,71 +1,36 @@
-import React from 'react'
+/* eslint-disable react/destructuring-assignment */
+import React, { Component } from 'react'
+import TableRow from './TableRow'
 
-export const Table = () => {
-  return (
-    <div className="table">
-      <table>
-        <thead>
-          {' '}
-          {' '}
-          <tr>
-            {' '}
-            {' '}
-            <th>
-                        Name
-            </th>
-            <th>ID</th>
-            {' '}
-            <th>
-                        Favorite Color
-            </th>
-          </tr>
-          {' '}
-        </thead>
-        {' '}
-        <tbody>
-          {' '}
-          {' '}
-          <tr>
-            {' '}
-            {' '}
-            <td>
-                        Jim
-            </td>
-            <td>00001</td>
-            {' '}
-            <td>
-                        Blue
-            </td>
-          </tr>
-          {' '}
-          <tr>
-            {' '}
-            {' '}
-            <td>
-                        Sue
-            </td>
-            <td>00002</td>
-            {' '}
-            <td>
-                        Red
-            </td>
-          </tr>
-          {' '}
-          <tr>
-            {' '}
-            {' '}
-            <td>
-                        Barb
-            </td>
-            <td>00003</td>
-            {' '}
-            <td>
-                        Green
-            </td>
-          </tr>
-          {' '}
-        </tbody>
-      </table>
-    </div>)
+class Table extends Component {
+  render() {
+    if (!this.props.files) {
+      return (
+        <>
+        </>
+      )
+    }
+
+    return (
+      <div className="table">
+        <table>
+          <thead>
+            <tr>
+              <th> </th>
+              <th>Filename</th>
+              <th>Description</th>
+              <th>Uploaded by</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.props.files.map((file) => (
+              <TableRow key={file['_id']} file={file} />
+            ))}
+          </tbody>
+        </table>
+      </div>)
+  }
 }
 
+export default Table
