@@ -11,6 +11,8 @@ text file etc.). In the list there should be an icon illustrating what filetype 
 
 # Solution
 
-I used React Starter generated using on frontend side, and Express with express-fileupload with Mongo DB as backend side.
+I used React Starter on frontend side, and Express with express-fileupload with Mongo DB as backend side. 
 
-To run the project it's necessary to start the server using `node server.js` in terminal, and as the next step start the react app from `src folder` by writing `npm start` in terminal.
+To run the project it's necessary to start with `npm install`. 
+Next, to start the server, write `node server.js` in the terminal.
+Finally, to start the react app go to `src folder` in the terminal and write `npm start` also in the terminal.
