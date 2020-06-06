@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+    height: 600px;
+    width: 600px;
+    margin: 0 auto;
+    background-color: cadetblue;
+    margin-top: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 15px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+td,
+th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+form {
+    width: 90%;
+    background-color: chocolate;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+input {
+    background-color: lightgray;
+}
+
+input[type=text] {
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=file] {
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    padding: 5px;
+    border: 2px solid lightgray;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
